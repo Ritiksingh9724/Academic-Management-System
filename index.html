@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Karnavati University Classroom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== LOADER ===== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <span>Karnavati University</span>
+    </div>
+  </div>
+
+  <!-- ===== NAV ===== -->
+  <nav id="navbar">
+    <div class="nav-brand">
+      <div class="nav-logo">KU</div>
+      <span>Karnavati University</span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active" data-section="home">Home</a>
+      <a href="#courses" class="nav-link" data-section="courses">Courses</a>
+      <a href="#dashboard" class="nav-link hidden" data-section="dashboard" id="dashLink">Dashboard</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-ghost" id="loginBtn">Log In</button>
+      <button class="btn-primary" id="signupBtn">Sign Up</button>
+      <div class="user-pill hidden" id="userPill">
+        <div class="user-avatar" id="userAvatar">S</div>
+        <span id="userName">Student</span>
+        <button class="btn-logout" id="logoutBtn">↩</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HOME SECTION ===== -->
+  <section id="home" class="section active">
+    <div class="hero">
+      <div class="hero-bg">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+        <div class="grid-lines"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-badge">Academic Management System</div>
+        <h1 class="hero-title">
+           Karnavati <br><span class="highlight">University Classroom</span><br>Management System
+        </h1>
+        <p class="hero-sub"> Register for world-class courses, track your progress, and unlock your potential with EduPortal's seamless enrollment system.</p>
+        <div class="hero-cta">
+          <button class="btn-hero" id="heroSignup">Get Started Free</button>
+          <button class="btn-hero-ghost" id="heroExplore">Explore Courses ↓</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">2,400+</span><span class="stat-label">Students</span></div>
+          <div class="stat-sep">|</div>
+          <div class="stat"><span class="stat-num">120+</span><span class="stat-label">Courses</span></div>
+          <div class="stat-sep">|</div>
+          <div class="stat"><span class="stat-num">98%</span><span class="stat-label">Satisfaction</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="card-stack">
+          <div class="float-card fc1">
+            <div class="fc-icon">DS</div>
+            <div class="fc-info"><strong>Data Structures</strong><span>CS301 · 4 Credits</span></div>
+          </div>
+          <div class="float-card fc2">
+            <div class="fc-icon">ML</div>
+            <div class="fc-info"><strong>Machine Learning</strong><span>AI401 · 3 Credits</span></div>
+          </div>
+          <div class="float-card fc3">
+            <div class="fc-icon">WEB</div>
+            <div class="fc-info"><strong>Web Development</strong><span>CS210 · 4 Credits</span></div>
+          </div>
+          <div class="float-card fc4">
+            <div class="fc-icon">STAT</div>
+            <div class="fc-info"><strong>Statistics</strong><span>MATH201 · 3 Credits</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Features -->
+    <div class="features">
+      <div class="features-header">
+        <h2>Why EduPortal?</h2>
+        <p>Everything you need to manage your academic journey</p>
+      </div>
+      <div class="features-grid">
+        <div class="feat-card">
+          <div class="feat-icon"></div>
+          <h3>Instant Enrollment</h3>
+          <p>Register for courses in seconds with real-time seat availability updates.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon"></div>
+          <h3>Smart Dashboard</h3>
+          <p>Track all your enrollments, credits, and academic progress in one place.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon"></div>
+          <h3>Secure Auth</h3>
+          <p>JWT-based authentication keeps your academic data safe and private.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon"></div>
+          <h3>Fully Responsive</h3>
+          <p>Enroll from any device — desktop, tablet, or smartphone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COURSES SECTION ===== -->
+  <section id="courses" class="section">
+    <div class="section-header">
+      <h2>Available Courses</h2>
+      <p>Explore our curated curriculum across multiple disciplines</p>
+    </div>
+    <div class="courses-toolbar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="courseSearch" placeholder="Search courses..." />
+      </div>
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="CS">Computer Science</button>
+        <button class="filter-tab" data-filter="MATH">Mathematics</button>
+        <button class="filter-tab" data-filter="AI">AI & ML</button>
+        <button class="filter-tab" data-filter="BUS">Business</button>
+      </div>
+    </div>
+    <div class="courses-grid" id="coursesGrid">
+      <!-- Dynamically populated -->
+    </div>
+    <div class="courses-empty hidden" id="coursesEmpty">
+      <div class="empty-icon">📭</div>
+      <p>No courses found matching your search.</p>
+    </div>
+  </section>
+
+  <!-- ===== DASHBOARD SECTION ===== -->
+  <section id="dashboard" class="section hidden">
+    <div class="section-header">
+      <h2>My Dashboard</h2>
+      <p>Manage your enrollments and track your progress</p>
+    </div>
+    <div class="dash-overview">
+      <div class="dash-card dc-blue">
+        <div class="dc-label">Enrolled Courses</div>
+        <div class="dc-value" id="enrollCount">0</div>
+      </div>
+      <div class="dash-card dc-green">
+        <div class="dc-label">Total Credits</div>
+        <div class="dc-value" id="totalCredits">0</div>
+      </div>
+      <div class="dash-card dc-orange">
+        <div class="dc-label">Completed</div>
+        <div class="dc-value" id="completedCount">0</div>
+      </div>
+    </div>
+    <div class="dash-enrollments">
+      <div class="dash-section-title">My Enrollments</div>
+      <div id="enrollmentsList">
+        <div class="empty-enrollments">
+          <div class="empty-icon">🎓</div>
+          <p>You haven't enrolled in any courses yet.</p>
+          <button class="btn-primary" id="browseCourses">Browse Courses</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AUTH MODAL ===== -->
+  <div id="authModal" class="modal hidden">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-tabs">
+        <button class="modal-tab active" id="tabLogin">Log In</button>
+        <button class="modal-tab" id="tabSignup">Sign Up</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="auth-form">
+        <div class="form-header">
+          <h2>HELLO BACHOOO!!</h2>
+          <p>Sign in to your karnavati university</p>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="loginEmail" placeholder="you@university.edu" required />
+          <span class="field-error" id="loginEmailErr"></span>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <div class="pw-wrapper">
+            <input type="password" id="loginPassword" placeholder="••••••••" required />
+            <button type="button" class="pw-toggle" data-target="loginPassword">👁</button>
+          </div>
+          <span class="field-error" id="loginPwErr"></span>
+        </div>
+        <div class="form-msg hidden" id="loginMsg"></div>
+        <button type="submit" class="btn-primary btn-full" id="loginSubmit">
+          <span>Sign In</span><div class="btn-loader hidden"></div>
+        </button>
+        <p class="form-switch">Don't have an account? <a href="#" id="switchToSignup">Sign up</a></p>
+      </form>
+
+      <!-- Signup Form -->
+      <form id="signupForm" class="auth-form hidden">
+        <div class="form-header">
+          <h2>Create Account</h2>
+          <p>Join thousands of students on EduPortal</p>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" id="signupFirst" placeholder="Jane" required />
+            <span class="field-error" id="signupFirstErr"></span>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" id="signupLast" placeholder="Doe" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Student ID</label>
+          <input type="text" id="signupStudentId" placeholder="e.g. STU2024001" required />
+          <span class="field-error" id="signupIdErr"></span>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="signupEmail" placeholder="you@university.edu" required />
+          <span class="field-error" id="signupEmailErr"></span>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <div class="pw-wrapper">
+            <input type="password" id="signupPassword" placeholder="Min 6 characters" required />
+            <button type="button" class="pw-toggle" data-target="signupPassword">👁</button>
+          </div>
+          <div class="pw-strength" id="pwStrength">
+            <div class="pw-bar"></div><div class="pw-bar"></div><div class="pw-bar"></div>
+          </div>
+          <span class="field-error" id="signupPwErr"></span>
+        </div>
+        <div class="form-msg hidden" id="signupMsg"></div>
+        <button type="submit" class="btn-primary btn-full" id="signupSubmit">
+          <span>Create Account</span><div class="btn-loader hidden"></div>
+        </button>
+        <p class="form-switch">Already have an account? <a href="#" id="switchToLogin">Log in</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== TOAST ===== -->
+  <div id="toast" class="toast hidden">
+    <span id="toastMsg">Message</span>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
